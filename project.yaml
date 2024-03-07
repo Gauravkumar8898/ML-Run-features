@@ -1,18 +1,8 @@
 kind: project
 metadata:
-  name: tensorflow-mlrun-knoldus
-  created: '2024-03-06T08:39:22.827056'
+  name: open-nashtech
 spec:
-  description: my new project
-  functions:
-  - url: /home/knoldus/Desktop/MLrun/src/pipeline/transformers_pipeline.py
-    name: runner
-    kind: job
-    image: mlrun/mlrun
-  - url: /home/knoldus/Desktop/MLrun/src/pipeline/transformers_pipeline.py
-    name: new-runner
-    kind: job
-    image: mlrun/mlrun
+  functions: []
   workflows: []
   artifacts: []
   conda: ''
@@ -22,5 +12,3 @@ spec:
     commands: []
     requirements: []
   custom_packagers: []
-status:
-  state: online

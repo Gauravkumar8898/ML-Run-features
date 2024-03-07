@@ -1,6 +1,5 @@
-.idea/
+../.idea/
 *__pycache__*
 *.tar
 .venv
-transformers-example
-output
+
