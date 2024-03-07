@@ -1,0 +1,28 @@
+kind: project
+metadata:
+  name: tensorflow-mlrun-nashtech
+  created: '2024-03-05T07:40:40.384760'
+spec:
+  description: my new project
+  functions:
+  - url: data_prep.py
+    name: data-prep
+    kind: job
+    image: mlrun/mlrun
+    handler: breast_cancer_generator
+  - url: data.py
+    name: data
+    kind: job
+    image: mlrun/mlrun
+    handler: wine_data_generator
+  workflows: []
+  artifacts: []
+  conda: ''
+  source: ''
+  desired_state: online
+  build:
+    commands: []
+    requirements: []
+  custom_packagers: []
+status:
+  state: online
