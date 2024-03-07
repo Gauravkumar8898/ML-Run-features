@@ -1,18 +1,6 @@
-import os
-import numpy as np
 import mlrun
-import transformers.pipelines
-# from mlrun.frameworks.huggingface import *
 from transformers import pipeline
-import pandas as pd
-from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
-                          Trainer,
-                          TrainingArguments)
-from datasets import load_dataset, load_metric
 import logging
-import os
-from huggingface_hub import login
-# from src.utils.constants import model_name, hub_model_id_path, output_directory
 
 class Mlrun_Pipeline_Transformer:
     def __init__(self):
