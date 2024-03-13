@@ -7,7 +7,7 @@ import mlrun.frameworks.tf_keras as mlrun_tf
 def train(
         dataset: mlrun.DataItem,  # data inputs are of type DataItem (abstract the data source)
         label_column: str = "label",
-        model_name: str = "wine_classifier",
+        model_name: str = "diabetes_classifier",
 ):
     # Get the input dataframe (Use DataItem.as_df() to access any data source)
     df = dataset.as_df()

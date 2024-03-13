@@ -1,22 +1,22 @@
 import mlrun
 import pandas as pd
-from sklearn.datasets import load_wine
+from sklearn.datasets import load_diabetes
 
 
 @mlrun.handler(outputs=["dataset", "label_column"])
-def wine_data_generator():
+def diabetes_data_generator():
     """
-    A function which generates the wine dataset
+    A function which generates the diabetes dataset
     """
-    wine = load_wine()
-    wine_dataset = pd.DataFrame(
-        data=wine.data, columns=wine.feature_names
+    diabetes = load_diabetes()
+    diabetes_dataset = pd.DataFrame(
+        data=diabetes.data, columns=diabetes.feature_names
     )
-    wine_labels = pd.DataFrame(data=wine.target, columns=["label"])
-    wine_dataset = pd.concat(
-        [wine_dataset, wine_labels], axis=1
+    diabetes_labels = pd.DataFrame(data=diabetes.target, columns=["label"])
+    diabetes_dataset = pd.concat(
+        [diabetes_dataset, diabetes_labels], axis=1
     )
-    return wine_dataset, "label"
+    return diabetes_dataset, "label"
 
 
 

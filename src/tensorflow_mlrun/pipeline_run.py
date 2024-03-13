@@ -9,7 +9,7 @@ def pipeline():
         name="data",
         kind="job",
         image="mlrun/mlrun",
-        handler="wine_data_generator",
+        handler="diabetes_data_generator",
     )
 
     project.save()  # save the project with the latest config
@@ -27,19 +27,4 @@ def pipeline():
         local=True,
     )
 
-    serving_fn = mlrun.new_function(
-        "serving",
-        image="mlrun/mlrun",
-        kind="serving",
-        requirements=["scikit-learn~=1.3.0", "tensorflow==2.15.0"],
-    )
 
-    serving_fn.add_model(
-        "wine-classifier",
-        model_path=trainer_run.outputs["model"],
-        class_name="mlrun.frameworks.tf_keras.TFKerasModelServer",
-    )
-
-    # Plot the serving graph topology
-    serving_fn.spec.graph.plot(rankdir="LR")
-    server = serving_fn.to_mock_server()
